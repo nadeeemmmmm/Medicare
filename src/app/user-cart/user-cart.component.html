@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Medicare</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="home">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/aboutUs">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/userViewProducts">View Products</a>
+          </li>  
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/userCart">Cart</a>
+          </li>   -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Logout</a>
+          </li>  
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br/>
+  <div class="container container-fluid">
+    <h3>Cart Items</h3>
+  </div>
+  <br/>
+  <div class="container container-fluid">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Order Id</th>
+          <th>Medicine Id</th>
+          <th>Name</th>
+          <th>Seller</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Price in INR</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cart of carts">
+          <td>{{cart.orderId}}</td>   
+          <td>{{cart.id}}</td>
+          <td>{{cart.name}}</td>
+          <td>{{cart.seller}}</td>
+          <td>{{cart.category}}</td>
+          <td>{{cart.description}}</td>
+          <td>{{cart.price}}</td>
+          <td>{{cart.quantity}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteItemFromCart(cart.orderId)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br/>
+  <div class="container container-fluid">
+    <button class="btn btn-warning" (click)="addMoreItems()">Add More Items</button>
+    <button class="btn btn-success" (click)="checkOut()">Check Out</button>
+  </div>
+  <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<app-footer></app-footer>

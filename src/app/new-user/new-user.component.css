@@ -1,0 +1,8 @@
+.form-control{
+    width: 600px;
+}
+#image{
+    float: right;
+    width: 800px;
+    height: 600px;
+}
